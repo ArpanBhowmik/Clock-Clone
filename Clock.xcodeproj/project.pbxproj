@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF324E952C5E237D0049A32A /* AlarmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF324E942C5E237D0049A32A /* AlarmsView.swift */; };
+		CF324E982C5E23950049A32A /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF324E972C5E23950049A32A /* StopwatchView.swift */; };
+		CF324E9B2C5E24240049A32A /* TimersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF324E9A2C5E24240049A32A /* TimersView.swift */; };
 		CF38CBCC2C5D3CC0002B68F6 /* ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38CBCB2C5D3CC0002B68F6 /* ClockApp.swift */; };
 		CF38CBCE2C5D3CC0002B68F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38CBCD2C5D3CC0002B68F6 /* ContentView.swift */; };
 		CF38CBD02C5D3CC1002B68F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF38CBCF2C5D3CC1002B68F6 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF324E942C5E237D0049A32A /* AlarmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsView.swift; sourceTree = "<group>"; };
+		CF324E972C5E23950049A32A /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
+		CF324E9A2C5E24240049A32A /* TimersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimersView.swift; sourceTree = "<group>"; };
 		CF38CBC82C5D3CC0002B68F6 /* Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF38CBCB2C5D3CC0002B68F6 /* ClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockApp.swift; sourceTree = "<group>"; };
 		CF38CBCD2C5D3CC0002B68F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +79,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF324E8F2C5E22450049A32A /* World Clock */ = {
+			isa = PBXGroup;
+			children = (
+				CF38CBF52C5D41FA002B68F6 /* Views */,
+			);
+			path = "World Clock";
+			sourceTree = "<group>";
+		};
+		CF324E902C5E22510049A32A /* Alarms */ = {
+			isa = PBXGroup;
+			children = (
+				CF324E932C5E22970049A32A /* Views */,
+			);
+			path = Alarms;
+			sourceTree = "<group>";
+		};
+		CF324E912C5E22690049A32A /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				CF324E962C5E23830049A32A /* Views */,
+			);
+			path = Stopwatch;
+			sourceTree = "<group>";
+		};
+		CF324E922C5E22760049A32A /* Timers */ = {
+			isa = PBXGroup;
+			children = (
+				CF324E992C5E24120049A32A /* TimersView */,
+			);
+			path = Timers;
+			sourceTree = "<group>";
+		};
+		CF324E932C5E22970049A32A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF324E942C5E237D0049A32A /* AlarmsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CF324E962C5E23830049A32A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF324E972C5E23950049A32A /* StopwatchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CF324E992C5E24120049A32A /* TimersView */ = {
+			isa = PBXGroup;
+			children = (
+				CF324E9A2C5E24240049A32A /* TimersView.swift */,
+			);
+			path = TimersView;
+			sourceTree = "<group>";
+		};
 		CF38CBBF2C5D3CC0002B68F6 = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +158,10 @@
 		CF38CBCA2C5D3CC0002B68F6 /* Clock */ = {
 			isa = PBXGroup;
 			children = (
-				CF38CBF52C5D41FA002B68F6 /* Views */,
+				CF324E922C5E22760049A32A /* Timers */,
+				CF324E912C5E22690049A32A /* Stopwatch */,
+				CF324E902C5E22510049A32A /* Alarms */,
+				CF324E8F2C5E22450049A32A /* World Clock */,
 				CF38CBCB2C5D3CC0002B68F6 /* ClockApp.swift */,
 				CF38CBCD2C5D3CC0002B68F6 /* ContentView.swift */,
 				CF38CBCF2C5D3CC1002B68F6 /* Assets.xcassets */,
@@ -270,6 +335,9 @@
 			files = (
 				CF38CBCE2C5D3CC0002B68F6 /* ContentView.swift in Sources */,
 				CF38CBF72C5D421B002B68F6 /* WorldClockView.swift in Sources */,
+				CF324E952C5E237D0049A32A /* AlarmsView.swift in Sources */,
+				CF324E982C5E23950049A32A /* StopwatchView.swift in Sources */,
+				CF324E9B2C5E24240049A32A /* TimersView.swift in Sources */,
 				CF38CBCC2C5D3CC0002B68F6 /* ClockApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

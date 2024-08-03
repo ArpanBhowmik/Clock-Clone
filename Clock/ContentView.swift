@@ -15,17 +15,17 @@ struct ContentView: View {
                     Label("World Clock", systemImage: "globe")
                 }
             
-            Text("Alarms")
+            AlarmsView()
                 .tabItem {
                     Label("Alarms", systemImage: "alarm.fill")
                 }
             
-            Text("Stopwatch")
+            StopwatchView()
                 .tabItem {
                     Label("Stopwatch", systemImage: "stopwatch.fill")
                 }
             
-            Text("Timers")
+            TimersView()
                 .tabItem {
                     Label("Timers", systemImage: "timer")
                 }
