@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AlarmsView: View {
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
                 Button("Edit") {
                     
@@ -25,6 +25,7 @@ struct AlarmsView: View {
                         .foregroundColor(.orange)
                 })
             }
+            .padding(4)
             
             HStack {
                 Text("Alarms")
@@ -33,7 +34,7 @@ struct AlarmsView: View {
                 
                 Spacer()
             }
-            .padding(.vertical, 4)
+            .padding(4)
             
             HStack {
                 VStack {
@@ -44,10 +45,11 @@ struct AlarmsView: View {
                 
                 Spacer()
             }
-            .padding(.vertical, 4)
+            .padding(4)
             
             Divider()
                 .background(.white)
+                .padding(4)
             
             HStack {
                 Text("No Alarm")
@@ -65,14 +67,16 @@ struct AlarmsView: View {
                 .background(.gray)
                 .cornerRadius(10)
             }
+            .padding(4)
             
             Divider()
                 .background(.white)
+                .padding(4)
             
+            AlarmListView()
                         
             Spacer()
         }
-        .padding()
     }
 }
 

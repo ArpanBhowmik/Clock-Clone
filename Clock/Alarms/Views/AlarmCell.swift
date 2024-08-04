@@ -11,25 +11,27 @@ struct AlarmCell: View {
     @State private var isOn: Bool = false
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                HStack(alignment: .lastTextBaseline) {
-                    Text("5:30")
-                        .font(.system(size: 50))
-                        .fontWeight(.ultraLight)
-                    Text("AM")
-                        .font(.system(size: 30))
+        VStack {
+            HStack {
+                VStack(alignment: .leading) {
+                    HStack(alignment: .lastTextBaseline) {
+                        Text("5:30")
+                            .font(.system(size: 50))
+                            .fontWeight(.ultraLight)
+                        Text("AM")
+                            .font(.system(size: 30))
+                            .fontWeight(.ultraLight)
+                    }
+                    
+                    Text("Alarm")
                         .fontWeight(.ultraLight)
                 }
                 
-                Text("Alarm")
-                    .fontWeight(.ultraLight)
-                
-                Divider()
-                    .background(.white)
+                Toggle("", isOn: $isOn)
             }
             
-            Toggle("", isOn: $isOn)
+            Divider()
+                .background(.white)
         }
     }
 }
