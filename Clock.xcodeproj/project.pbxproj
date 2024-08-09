@@ -20,6 +20,7 @@
 		CF38CBE72C5D3CC1002B68F6 /* ClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38CBE62C5D3CC1002B68F6 /* ClockUITests.swift */; };
 		CF38CBE92C5D3CC1002B68F6 /* ClockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38CBE82C5D3CC1002B68F6 /* ClockUITestsLaunchTests.swift */; };
 		CF38CBF72C5D421B002B68F6 /* WorldClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38CBF62C5D421B002B68F6 /* WorldClockView.swift */; };
+		CFEE63AD2C5FCA990096EFD2 /* AddAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE63AC2C5FCA990096EFD2 /* AddAlarmView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		CF38CBE62C5D3CC1002B68F6 /* ClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockUITests.swift; sourceTree = "<group>"; };
 		CF38CBE82C5D3CC1002B68F6 /* ClockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CF38CBF62C5D421B002B68F6 /* WorldClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldClockView.swift; sourceTree = "<group>"; };
+		CFEE63AC2C5FCA990096EFD2 /* AddAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				CF324E942C5E237D0049A32A /* AlarmsView.swift */,
 				CF324E9C2C5E7A430049A32A /* AlarmCell.swift */,
 				CF324E9E2C5E95E10049A32A /* AlarmListView.swift */,
+				CFEE63AC2C5FCA990096EFD2 /* AddAlarmView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				CF324E982C5E23950049A32A /* StopwatchView.swift in Sources */,
 				CF324E9B2C5E24240049A32A /* TimersView.swift in Sources */,
 				CF38CBCC2C5D3CC0002B68F6 /* ClockApp.swift in Sources */,
+				CFEE63AD2C5FCA990096EFD2 /* AddAlarmView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
