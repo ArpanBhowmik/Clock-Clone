@@ -42,8 +42,6 @@ struct AddAlarmView: View {
                     }
                 }
                 .pickerStyle(.wheel)
-                .clipShape(.rect.offset(x: -16))
-                .padding(.trailing, -16)
                 
                 Picker("Miniutes", selection: $selected) {
                     ForEach(0..<60) {id in
@@ -51,8 +49,6 @@ struct AddAlarmView: View {
                     }
                 }
                 .pickerStyle(.wheel)
-                .clipShape(.rect.offset(x: 16))
-                .padding(.leading, -16)
                 
                 Picker("Miniutes", selection: $selected) {
                     Text("AM")
@@ -61,6 +57,8 @@ struct AddAlarmView: View {
                 .pickerStyle(WheelPickerStyle())
             }
             .padding()
+            
+            AddAlarmFormView()
             
             Spacer()
         }
