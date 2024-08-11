@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AlarmListView: View {
+struct AlarmListView: View {    
     var body: some View {
         VStack {
             HStack {

@@ -9,12 +9,13 @@ import SwiftUI
 
 struct AddAlarmView: View {
     @State private var selected: String = ""
-    
+    @Environment (\.dismiss) var dismiss
+
     var body: some View {
         VStack {
             HStack {
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Text("Cancel")
                         .foregroundColor(.orange)
@@ -27,7 +28,7 @@ struct AddAlarmView: View {
                 Spacer()
                 
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Text("Save")
                         .foregroundColor(.orange)

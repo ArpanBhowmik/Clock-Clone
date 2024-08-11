@@ -9,6 +9,8 @@ import SwiftUI
 import UserNotifications
 
 struct AlarmsView: View {
+    @State private var isPresented: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -21,10 +23,14 @@ struct AlarmsView: View {
                 
                 Button(action: {
                     scheduleAlarm()
+                    isPresented.toggle()
                 }, label: {
                     Image(systemName: "plus")
                         .foregroundColor(.orange)
                 })
+                .sheet(isPresented: $isPresented) {
+                    AddAlarmView()
+                }
             }
             .padding(4)
             

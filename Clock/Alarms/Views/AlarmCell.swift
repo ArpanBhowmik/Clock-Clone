@@ -29,9 +29,6 @@ struct AlarmCell: View {
                 
                 Toggle("", isOn: $isOn)
             }
-            
-            Divider()
-                .background(.white)
         }
     }
 }
