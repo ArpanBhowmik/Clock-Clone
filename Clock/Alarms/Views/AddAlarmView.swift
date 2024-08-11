@@ -29,7 +29,7 @@ struct AddAlarmView: View {
                 Button {
                     
                 } label: {
-                    Text("Edit")
+                    Text("Save")
                         .foregroundColor(.orange)
                 }
             }
@@ -37,15 +37,19 @@ struct AddAlarmView: View {
                         
             HStack {
                 Picker("Hours", selection: $selected) {
-                    ForEach(1..<13) {id in
+                    ForEach(1..<13) { id in
                         Text("\(id)")
                     }
                 }
                 .pickerStyle(.wheel)
                 
                 Picker("Miniutes", selection: $selected) {
-                    ForEach(0..<60) {id in
-                        Text("\(id)")
+                    ForEach(0..<60) { id in
+                        if id < 10 {
+                            Text("0\(id)")
+                        } else {
+                            Text("\(id)")
+                        }
                     }
                 }
                 .pickerStyle(.wheel)

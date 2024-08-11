@@ -8,18 +8,58 @@
 import SwiftUI
 
 struct AddAlarmFormView: View {
-    @State var notifyMeAbout: Bool = false
+    @State private var labelText: String = ""
+    @State private var isSnoozed: Bool = false
     
     var body: some View {
         Form {
-            Picker("Repeat", selection: $notifyMeAbout) {
+            HStack {
+                Text("Repeat")
+                
+                Spacer()
+                
                 Text("Never")
+                    .foregroundColor(.secondary)
+                
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.secondary)
+                })
             }
-            .bold()
-            .pickerStyle(.navigationLink)
             
             HStack {
                 Text("Label")
+                
+                Spacer()
+                
+                TextField("Alarm", text: $labelText)
+                    .multilineTextAlignment(.trailing)
+            }
+            
+            HStack {
+                Text("Sound")
+                
+                Spacer()
+                
+                Text("Radial")
+                    .foregroundColor(.secondary)
+                
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.secondary)
+                })
+            }
+            
+            HStack {
+                Text("Snooze")
+                
+                Spacer()
+                
+                Toggle("", isOn: $isSnoozed)
             }
         }
     }
