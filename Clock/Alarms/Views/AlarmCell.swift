@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AlarmCell: View {
+    let alarm: Alarm
     @State private var isOn: Bool = false
     
     var body: some View {
@@ -15,15 +16,15 @@ struct AlarmCell: View {
             HStack {
                 VStack(alignment: .leading) {
                     HStack(alignment: .lastTextBaseline) {
-                        Text("5:30")
+                        Text("\(alarm.hour):\(alarm.minute)")
                             .font(.system(size: 50))
                             .fontWeight(.ultraLight)
-                        Text("AM")
+                        Text(alarm.meridiem.rawValue)
                             .font(.system(size: 30))
                             .fontWeight(.ultraLight)
                     }
                     
-                    Text("Alarm")
+                    Text(alarm.title)
                         .fontWeight(.ultraLight)
                 }
                 
@@ -34,5 +35,5 @@ struct AlarmCell: View {
 }
 
 #Preview {
-    AlarmCell()
+    AlarmCell(alarm: testAlarm)
 }

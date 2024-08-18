@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct Alarm {
-    let repeatRoutine: RepeatRoutine
-    let title: String
-    let sound: String
-    let snooze: Bool
-    let hour: String
-    let minute: String
-    let meridiem: Meridiem
+struct Alarm: Identifiable {
+    var id = UUID()
+    var repeatRoutine: RepeatRoutine
+    var title: String
+    var sound: String
+    var snooze: Bool
+    var hour: String
+    var minute: String
+    var meridiem: Meridiem
 }
 
 enum RepeatRoutine {
@@ -28,7 +29,27 @@ enum RepeatRoutine {
     case friday
 }
 
-enum Meridiem {
-    case am
-    case pm
+enum Meridiem: String {
+    case am = "AM"
+    case pm = "PM"
 }
+
+let testAlarm = Alarm(
+    repeatRoutine: .never,
+    title: "Alarm",
+    sound: "",
+    snooze: false,
+    hour: "6",
+    minute: "30",
+    meridiem: .pm
+)
+
+let emptyAlarm = Alarm(
+    repeatRoutine: .never,
+    title: "",
+    sound: "",
+    snooze: false,
+    hour: "",
+    minute: "",
+    meridiem: .pm
+)

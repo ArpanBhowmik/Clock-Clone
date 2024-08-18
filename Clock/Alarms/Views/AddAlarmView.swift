@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AddAlarmView: View {
-    @State private var selected: String = ""
-    @Environment (\.dismiss) var dismiss
+    @Binding var alarm: Alarm
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
@@ -37,14 +37,14 @@ struct AddAlarmView: View {
             .padding()
                         
             HStack {
-                Picker("Hours", selection: $selected) {
+                Picker("Hours", selection: $alarm.hour) {
                     ForEach(1..<13) { id in
                         Text("\(id)")
                     }
                 }
                 .pickerStyle(.wheel)
                 
-                Picker("Miniutes", selection: $selected) {
+                Picker("Miniutes", selection: $alarm.minute) {
                     ForEach(0..<60) { id in
                         if id < 10 {
                             Text("0\(id)")
@@ -55,7 +55,7 @@ struct AddAlarmView: View {
                 }
                 .pickerStyle(.wheel)
                 
-                Picker("Miniutes", selection: $selected) {
+                Picker("Miniutes", selection: $alarm.meridiem) {
                     Text("AM")
                     Text("PM")
                 }
@@ -72,5 +72,5 @@ struct AddAlarmView: View {
 }
 
 #Preview {
-    AddAlarmView()
+    AddAlarmView(alarm: .constant(testAlarm))
 }

@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct AlarmListView: View {    
+struct AlarmListView: View {
+    @Binding var alarms: [Alarm]
+    
     var body: some View {
         VStack {
             HStack {
@@ -20,13 +22,13 @@ struct AlarmListView: View {
             Divider()
                 .background(.white)
             
-            List(1..<6) { index in
-                AlarmCell()
+            List(alarms) { alarm in
+                AlarmCell(alarm: alarm)
             }
         }
     }
 }
 
 #Preview {
-    AlarmListView()
+    AlarmListView(alarms: .constant([testAlarm]))
 }
