@@ -9,8 +9,13 @@ import SwiftUI
 
 struct AddAlarmView: View {
     @Binding var alarm: Alarm
+    
+    @State var hour: String = "1"
+    @State var minute: String = ""
+    @State var meridiem: Meridiem = .am
+    
     @Environment(\.dismiss) var dismiss
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -35,35 +40,49 @@ struct AddAlarmView: View {
                 }
             }
             .padding()
-                        
+            
             HStack {
-                Picker("Hours", selection: $alarm.hour) {
+                Picker("Hours", selection: $hour) {
                     ForEach(1..<13) { id in
                         Text("\(id)")
+                            .tag("\(id)")
                     }
                 }
                 .pickerStyle(.wheel)
+                .onChange(of: hour) { tag in
+                    alarm.hour = tag
+                }
                 
-                Picker("Miniutes", selection: $alarm.minute) {
+                Picker("Miniutes", selection: $minute) {
                     ForEach(0..<60) { id in
                         if id < 10 {
                             Text("0\(id)")
+                                .tag("0\(id)")
                         } else {
                             Text("\(id)")
+                                .tag("\(id)")
                         }
                     }
                 }
                 .pickerStyle(.wheel)
+                .onChange(of: minute) { tag in
+                    alarm.minute = tag
+                }
                 
-                Picker("Miniutes", selection: $alarm.meridiem) {
-                    Text("AM")
-                    Text("PM")
+                Picker("Miniutes", selection: $meridiem) {
+                    Text("AM").tag("AM")
+                    Text("PM").tag("PM")
                 }
                 .pickerStyle(WheelPickerStyle())
+                .onChange(of: meridiem) { tag in
+                    alarm.meridiem = tag
+                }
             }
             .padding()
             
             AddAlarmFormView()
+            
+            Text("changed hour: \(hour)")
             
             Spacer()
         }
