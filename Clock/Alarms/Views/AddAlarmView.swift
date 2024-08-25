@@ -81,12 +81,9 @@ struct AddAlarmView: View {
             .padding()
             
             AddAlarmFormView()
-            
-            Text("changed hour: \(hour)")
-            
+                        
             Spacer()
         }
-        
     }
 }
 

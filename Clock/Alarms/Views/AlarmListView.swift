@@ -10,11 +10,6 @@ import SwiftUI
 struct AlarmListView: View {
     let alarms: [Alarm]
     
-    init(alarms: [Alarm]) {
-        self.alarms = alarms
-        print("[arpan] in listview")
-    }
-    
     var body: some View {
         VStack {
             HStack {
