@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct AlarmListView: View {
-    @Binding var alarms: [Alarm]
+    let alarms: [Alarm]
+    
+    init(alarms: [Alarm]) {
+        self.alarms = alarms
+        print("[arpan] in listview")
+    }
     
     var body: some View {
         VStack {
@@ -22,7 +27,7 @@ struct AlarmListView: View {
             Divider()
                 .background(.white)
             
-            List(alarms) { alarm in
+            List(alarms, id: \.self) { alarm in
                 AlarmCell(alarm: alarm)
             }
         }
@@ -30,5 +35,5 @@ struct AlarmListView: View {
 }
 
 #Preview {
-    AlarmListView(alarms: .constant([testAlarm]))
+    AlarmListView(alarms: [testAlarm])
 }

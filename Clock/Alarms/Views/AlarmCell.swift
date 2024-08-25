@@ -11,6 +11,11 @@ struct AlarmCell: View {
     let alarm: Alarm
     @State private var isOn: Bool = false
     
+    init(alarm: Alarm) {
+        self.alarm = alarm
+        print("[AlarmCell] hour = \(alarm.hour), minutes = \(alarm.minute)")
+    }
+    
     var body: some View {
         VStack {
             HStack {

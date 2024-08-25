@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Alarm: Identifiable, Equatable {
+struct Alarm: Equatable, Hashable {
     var id = UUID()
     var repeatRoutine: RepeatRoutine
     var title: String

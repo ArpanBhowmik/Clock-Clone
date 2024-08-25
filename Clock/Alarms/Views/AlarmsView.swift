@@ -11,7 +11,7 @@ import UserNotifications
 struct AlarmsView: View {
     @State private var isPresented: Bool = false
     @State var newAlarm: Alarm = emptyAlarm
-    @State var alarms: [Alarm] = []
+    @ObservedObject var alarmViewModel = AlarmViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,10 +31,8 @@ struct AlarmsView: View {
                         .foregroundColor(.orange)
                 })
                 .sheet(isPresented: $isPresented, onDismiss: {
-                    print("[arpan] in ondismiss, newAlarm = \(newAlarm)")
-                    if !newAlarm.hour.isEmpty {
-                        alarms.append(newAlarm)
-                    }
+                    print("[AlarmsView] in ondismiss, newAlarm = \(newAlarm)")
+                    alarmViewModel.addAlarm(alarm: newAlarm)
                 }) {
                     AddAlarmView(alarm: $newAlarm)
                 }
@@ -87,7 +85,7 @@ struct AlarmsView: View {
                 .background(.white)
                 .padding(4)
             
-            AlarmListView(alarms: $alarms)
+            AlarmListView(alarms: alarmViewModel.alarms)
                         
             Spacer()
         }

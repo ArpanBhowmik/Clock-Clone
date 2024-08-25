@@ -69,11 +69,11 @@ struct AddAlarmView: View {
                     alarm.minute = tag
                 }
                 
-                Picker("Miniutes", selection: $meridiem) {
-                    Text("AM").tag("AM")
-                    Text("PM").tag("PM")
+                Picker("Meridiem", selection: $meridiem) {
+                    Text("AM").tag(Meridiem.am)
+                    Text("PM").tag(Meridiem.pm)
                 }
-                .pickerStyle(WheelPickerStyle())
+                .pickerStyle(.wheel)
                 .onChange(of: meridiem) { tag in
                     alarm.meridiem = tag
                 }
