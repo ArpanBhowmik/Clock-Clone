@@ -42,7 +42,7 @@ struct AlarmsView: View {
             HStack {
                 Text("Alarms")
                     .font(.title)
-                .bold()
+                    .bold()
                 
                 Spacer()
             }
@@ -52,7 +52,7 @@ struct AlarmsView: View {
                 VStack {
                     Label("Sleep | Wake Up", systemImage: "bed.double.fill")
                         .font(.title2)
-                    .bold()
+                        .bold()
                 }
                 
                 Spacer()
@@ -86,7 +86,7 @@ struct AlarmsView: View {
                 .padding(4)
             
             AlarmListView(alarms: alarmViewModel.alarms)
-                        
+            
             Spacer()
         }
         .onAppear(){
@@ -98,6 +98,8 @@ struct AlarmsView: View {
                     print(error.localizedDescription)
                 }
             }
+            
+            alarmViewModel.loadAlarmsFromUserDefaults()
         }
     }
     

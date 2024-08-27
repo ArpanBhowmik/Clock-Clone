@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Alarm: Equatable, Hashable {
+struct Alarm: Equatable, Hashable, Codable {
     var id = UUID()
     var repeatRoutine: RepeatRoutine
     var title: String
@@ -18,7 +18,7 @@ struct Alarm: Equatable, Hashable {
     var meridiem: Meridiem
 }
 
-enum RepeatRoutine {
+enum RepeatRoutine: Codable {
     case never
     case saturday
     case sunday
@@ -29,7 +29,7 @@ enum RepeatRoutine {
     case friday
 }
 
-enum Meridiem: String {
+enum Meridiem: String, Codable {
     case am = "AM"
     case pm = "PM"
 }

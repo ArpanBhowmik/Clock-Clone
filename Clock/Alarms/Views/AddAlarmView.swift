@@ -10,8 +10,8 @@ import SwiftUI
 struct AddAlarmView: View {
     @Binding var alarm: Alarm
     
-    @State var hour: String = "1"
-    @State var minute: String = ""
+    @State var hour: String = "6"
+    @State var minute: String = "06"
     @State var meridiem: Meridiem = .am
     
     @Environment(\.dismiss) var dismiss
@@ -20,6 +20,7 @@ struct AddAlarmView: View {
         VStack {
             HStack {
                 Button {
+                    alarm = emptyAlarm
                     dismiss()
                 } label: {
                     Text("Cancel")
